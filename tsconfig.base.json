@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-next/app1-ui": ["packages/app1-ui/src/index.ts"],
       "@nx-next/types": ["packages/types/src/index.ts"],
+      "@nx-next/ui": ["packages/ui/src/index.ts"],
       "@nx-next/utils": ["packages/utils/src/index.ts"]
     }
   },
