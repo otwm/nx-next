@@ -15,6 +15,46 @@
               {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
+              },
+              {
+                "sourceTag": "scope:types",
+                "onlyDependOnLibsWithTags": ["scope:types"]
+              },
+              {
+                "sourceTag": "scope:base",
+                "onlyDependOnLibsWithTags": ["scope:base", "scope:types"]
+              },
+              {
+                "sourceTag": "scope:common-ui",
+                "onlyDependOnLibsWithTags": ["scope:common-ui", "scope:base", "scope:types"]
+              },
+              {
+                "sourceTag": "scope:app1-ui",
+                "onlyDependOnLibsWithTags": ["scope:app1-ui", "scope:common-ui", "scope:base", "scope:types"]
+              },
+              {
+                "sourceTag": "scope:app2-ui",
+                "onlyDependOnLibsWithTags": ["scope:app2-ui", "scope:common-ui", "scope:base", "scope:types"]
+              },
+              {
+                "sourceTag": "scope:app1",
+                "onlyDependOnLibsWithTags": ["scope:app1", "scope:app1-ui", "scope:base", "scope:types"]
+              },
+              {
+                "sourceTag": "scope:app2",
+                "onlyDependOnLibsWithTags": ["scope:app2", "scope:app2-ui", "scope:base", "scope:types"]
+              },
+              {
+                "sourceTag": "scope:app1-e2e",
+                "onlyDependOnLibsWithTags": ["scope:app1-e2e", "scope:app1"]
+              },
+              {
+                "sourceTag": "scope:app2-e2e",
+                "onlyDependOnLibsWithTags": ["scope:app2-e2e", "scope:app2"]
+              },
+              {
+                "sourceTag": "scope:total-ui",
+                "onlyDependOnLibsWithTags": ["scope:total-ui", "scope:app2-ui", "scope:app1-ui", "scope:common-ui"]
               }
             ]
           }

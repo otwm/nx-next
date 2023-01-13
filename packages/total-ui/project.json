@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/total-ui/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["scope:total-ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",

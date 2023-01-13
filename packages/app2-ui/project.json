@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/app2-ui/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["scope:app2-ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
