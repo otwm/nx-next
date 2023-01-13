@@ -3,12 +3,13 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/ui/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/ui/**/*.ts"]
+        "lintFilePatterns": ["packages/ui/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
@@ -19,6 +20,5 @@
         "passWithNoTests": true
       }
     }
-  },
-  "tags": []
+  }
 }
