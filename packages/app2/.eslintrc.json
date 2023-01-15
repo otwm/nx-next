@@ -4,8 +4,8 @@
     "next",
     "eslint-config-airbnb",
     "next/core-web-vitals",
-    "../../.eslintrc.json",
-    "prettier"
+    "prettier",
+    "../../.eslintrc.json"
   ],
   "ignorePatterns": ["!**/*", ".next/**/*"],
   "overrides": [
