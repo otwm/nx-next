@@ -6,6 +6,56 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "camelcase": "error",
+        "semi": ["error", "never"],
+        "quotes": ["error", "single"],
+        "max-len": [2, {
+          "code": 120,
+          "tabWidth": 2,
+          "ignoreUrls": true,
+          "comments": 100,
+          "ignoreRegExpLiterals": true
+        }],
+        // "import/extensions": "off",
+        // "import/no-unresolved": "off",
+        "import/extensions": ["error", "ignorePackages", {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }],
+        "no-lonely-if": 0,
+        "no-underscore-dangle": 0,
+        "no-use-before-define": 0,
+        "no-unused-vars": "off",
+        "react/jsx-props-no-spreading": 0,
+        "import/prefer-default-export": 0,
+        "@typescript-eslint/no-unused-vars": ["off",
+          // or "error"
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+          }],
+        "prefer-destructuring": 0,
+        "react/jsx-no-useless-fragment": 0,
+        "react/no-unstable-nested-components": 0,
+        "arrow-body-style": 0,
+        "import/no-named-as-default": 0,
+        "import/no-extraneous-dependencies": ["error", {
+          "devDependencies": ["test.{ts,tsx}",
+            "test-*.{ts,tsx}",
+            // repos with a single test file
+            "test-*.{ts,tsx}",
+            // repos with multiple top-level test files
+            "**/*{.,_}{test,spec,stories}.{ts,tsx}",
+            // tests where the extension or filename suffix denotes that it is a test
+            "**/jest.config.ts",
+            // jest config
+            "**/jest.setup.ts" // jest setup
+          ],
+          "optionalDependencies": false
+        }],
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
           {
@@ -67,9 +117,40 @@
       "rules": {}
     },
     {
+      "files": ["*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {
+        "react/function-component-definition": [1, {
+          "namedComponents": "arrow-function",
+          "unnamedComponents": "arrow-function"
+        }],
+        "react/jsx-filename-extension": [2, {
+          "extensions": [".jsx", ".tsx"]
+        }],
+        "react/require-default-props": 0
+      }
+    },
+    {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {}
+      "rules": {
+      }
+    },
+    {
+      "files": ["*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {
+      }
     }
-  ]
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "packages/*/tsconfig.json"
+      } // this loads <rootdir>/tsconfig.json to eslint
+    }
+  }
 }

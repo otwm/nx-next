@@ -7,9 +7,18 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
+      "dependsOn": ["eslint"],
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "eslint": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["^eslint"],
+      "options": {
+        "command": "eslint . --fix",
+        "cwd": "packages/ui"
       }
     },
     "test": {

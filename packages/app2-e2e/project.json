@@ -19,9 +19,18 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
+      "dependsOn": ["eslint"],
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/app2-e2e/**/*.{js,ts}"]
+      }
+    },
+    "eslint": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["^eslint"],
+      "options": {
+        "command": "eslint . --fix",
+        "cwd": "packages/app2-e2e"
       }
     }
   },

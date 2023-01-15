@@ -1,1 +1,1 @@
-export * from './lib/total-ui';
+export * from './lib/total-ui'

@@ -1,10 +1,12 @@
 {
-  "extends": ["../../.eslintrc.json"],
+  "extends": ["plugin:import/recommended", "../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        "import/no-extraneous-dependencies": "off"
+      }
     },
     {
       "files": ["*.ts", "*.tsx"],

@@ -1,7 +1,7 @@
-import { utils } from './utils';
+import { getA } from './utils'
 
 describe('utils', () => {
   it('should work', () => {
-    expect(utils()).toEqual('utils');
-  });
-});
+    expect(getA()).toEqual('A')
+  })
+})
